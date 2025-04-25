@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2022 Ford F-150 Raptor - BuyMe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .auction-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .auction-image img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .auction-content {
+        display: flex;
+        gap: 20px;
+      }
+
+      .auction-details {
+        flex: 2;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .section h2 {
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+      }
+
+      .spec-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .spec-label {
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      .bid-sidebar {
+        flex: 1;
+        background-color: #f8fafc;
+        border-radius: 8px;
+        padding: 15px;
+        border: 1px solid #e2e8f0;
+        align-self: flex-start;
+      }
+
+      .current-bid {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .bid-meta {
+        display: flex;
+        justify-content: space-between;
+        color: #6b7280;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .countdown {
+        background-color: #fee2e2;
+        color: #b91c1c;
+        padding: 8px;
+        border-radius: 4px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .bid-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .bid-input {
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+      }
+
+      .place-bid-btn {
+        background-color: #4a6cf7;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .seller-info {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e5e7eb;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        .auction-content {
+          flex-direction: column;
+        }
+
+        .bid-sidebar {
+          order: -1;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">Buy<span>Me</span></a>
+        <nav>
+          <ul>
+            <li><a href="auctions.html">Auctions</a></li>
+            <li><a href="sell.html">Sell</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="login-btn">Log in</a>
+          <a href="register.html" class="register-btn">Register</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Auction Header -->
+      <div class="auction-header">
+        <div>
+          <h1>2022 Ford F-150 Raptor</h1>
+          <div>Pickup Truck | 8,500 miles</div>
+        </div>
+        <button><i class="far fa-heart"></i> Watch</button>
+      </div>
+
+      <!-- Auction Image -->
+      <div class="auction-image">
+        <img src="images/ford-f150-raptor.jpg" alt="2022 Ford F-150 Raptor" />
+      </div>
+
+      <!-- Auction Content -->
+      <div class="auction-content">
+        <!-- Auction Details -->
+        <div class="auction-details">
+          <!-- Overview Section -->
+          <div class="section">
+            <h2>Overview</h2>
+            <p>
+              This 2022 Ford F-150 Raptor is a high-performance off-road truck
+              in excellent condition with only 8,500 miles. It features a 3.5L
+              EcoBoost V6 engine, FOX Racing shocks, and 37-inch all-terrain
+              tires.
+            </p>
+          </div>
+
+          <!-- Specifications Section -->
+          <div class="section">
+            <h2>Vehicle Specifications</h2>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Year</span>
+                <span>2022</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Make</span>
+                <span>Ford</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Model</span>
+                <span>F-150 Raptor</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Mileage</span>
+                <span>8,500 miles</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Engine</span>
+                <span>3.5L EcoBoost V6</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Transmission</span>
+                <span>10-Speed Auto</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seller Notes Section -->
+          <div class="section">
+            <h2>Seller Notes</h2>
+            <p>
+              This Raptor has been my daily driver for the past year. It's been
+              regularly serviced at the local Ford dealership. The truck has
+              never been in an accident and has no mechanical issues.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bid Sidebar -->
+        <div class="bid-sidebar">
+          <div class="current-bid">$58,999.99</div>
+          <div class="bid-meta">
+            <span>23 bids</span>
+            <span>Reserve not met</span>
+          </div>
+          <div class="countdown"><i class="fas fa-clock"></i> 8h 45m left</div>
+
+          <form class="bid-form">
+            <input
+              type="number"
+              class="bid-input"
+              placeholder="Enter bid amount"
+              min="59000"
+              step="100"
+              required
+            />
+            <button type="submit" class="place-bid-btn">Place Bid</button>
+            <small style="text-align: center; display: block"
+              >Minimum bid: $59,000.00</small
+            >
+          </form>
+
+          <div class="seller-info">
+            <div><strong>Seller:</strong> John Smith</div>
+            <div>
+              <i class="fas fa-star" style="color: #f59e0b"></i>
+              <i class="fas fa-star" style="color: #f59e0b"></i>
+              <i class="fas fa-star" style="color: #f59e0b"></i>
+              <i class="fas fa-star" style="color: #f59e0b"></i>
+              <i class="fas fa-star-half-alt" style="color: #f59e0b"></i>
+              (32)
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2025 BuyMe. All rights reserved.</p>
+          <div>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

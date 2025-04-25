@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuyMe - Online Vehicle Auction</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">Buy<span>Me</span></a>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search for vehicles..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="auctions.html">Auctions</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="alerts.html">Alerts</a></li>
+          </ul>
+        </nav>
+
+        <div class="auth-buttons">
+          <a href="login.html" class="login-btn">Log in</a>
+          <a href="register.html" class="register-btn">Register</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Buy & Sell Vehicles with Confidence</h1>
+            <p>
+              Join thousands of users on BuyMe, the premier auction platform for
+              vehicles. Find great deals or sell your vehicle for the best
+              price.
+            </p>
+            <div class="hero-buttons">
+              <a href="auctions.html" class="btn btn-primary"
+                >Browse Auctions</a
+              >
+              <a href="sell.html" class="btn btn-secondary">Start Selling</a>
+            </div>
+          </div>
+          <div class="hero-images">
+            <div class="hero-image">
+              <img src="images/car.jpg" alt="Car" />
+            </div>
+            <div class="hero-image">
+              <img src="images/truck.jpg" alt="Truck" />
+            </div>
+            <div class="hero-image">
+              <img src="images/motorcycle.jpg" alt="Motorcycle" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section>
+        <h2 class="section-title">Browse Categories</h2>
+        <div class="categories">
+          <!-- Cars Category -->
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 class="category-name">Cars</h3>
+            </div>
+            <ul class="subcategories">
+              <li>
+                <i class="fas fa-car-side"></i>
+                <a href="category.html?cat=cars/sedan">Sedan</a>
+              </li>
+              <li>
+                <i class="fas fa-truck-monster"></i>
+                <a href="category.html?cat=cars/suv">SUV</a>
+              </li>
+              <li>
+                <i class="fas fa-car-side"></i>
+                <a href="category.html?cat=cars/sports">Sports</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Trucks Category -->
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-truck-pickup"></i>
+              </div>
+              <h3 class="category-name">Trucks</h3>
+            </div>
+            <ul class="subcategories">
+              <li>
+                <i class="fas fa-truck-pickup"></i>
+                <a href="category.html?cat=trucks/pickup">Pickup</a>
+              </li>
+              <li>
+                <i class="fas fa-truck"></i>
+                <a href="category.html?cat=trucks/commercial">Commercial</a>
+              </li>
+              <li>
+                <i class="fas fa-truck-monster"></i>
+                <a href="category.html?cat=trucks/heavy-duty">Heavy Duty</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Motorcycles Category -->
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-motorcycle"></i>
+              </div>
+              <h3 class="category-name">Motorcycles</h3>
+            </div>
+            <ul class="subcategories">
+              <li>
+                <i class="fas fa-motorcycle"></i>
+                <a href="category.html?cat=motorcycles/sport">Sport</a>
+              </li>
+              <li>
+                <i class="fas fa-motorcycle"></i>
+                <a href="category.html?cat=motorcycles/cruiser">Cruiser</a>
+              </li>
+              <li>
+                <i class="fas fa-motorcycle"></i>
+                <a href="category.html?cat=motorcycles/off-road">Off-road</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Auctions Section -->
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Featured Auctions</h2>
+          <a href="auctions.html" class="view-all">View All</a>
+        </div>
+        <div class="auctions">
+          <!-- Auction Card 1 -->
+          <div class="auction-card">
+            <div class="auction-image">
+              <img src="images/tesla-model-3.jpg" alt="2023 Tesla Model 3" />
+              <span class="auction-badge">15 bids</span>
+            </div>
+            <div class="auction-content">
+              <h3 class="auction-title">2023 Tesla Model 3 Long Range</h3>
+              <span class="auction-category">Sedan</span>
+              <div class="auction-price">
+                <div>
+                  <p class="price-label">Current Bid</p>
+                  <p class="price-value">$39,999.99</p>
+                </div>
+                <div class="auction-timer">
+                  <i class="fas fa-clock"></i>
+                  <span>2d 5h left</span>
+                </div>
+              </div>
+              <div class="auction-footer">
+                <a href="auction-detail.html?id=1" class="bid-btn">Bid Now</a>
+                <button class="watchlist-btn">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auction Card 2 -->
+          <div class="auction-card">
+            <div class="auction-image">
+              <img
+                src="images/ford-f150-raptor.jpg"
+                alt="2022 Ford F-150 Raptor"
+              />
+              <span class="auction-badge">23 bids</span>
+            </div>
+            <div class="auction-content">
+              <h3 class="auction-title">2022 Ford F-150 Raptor</h3>
+              <span class="auction-category">Pickup</span>
+              <div class="auction-price">
+                <div>
+                  <p class="price-label">Current Bid</p>
+                  <p class="price-value">$58,999.99</p>
+                </div>
+                <div class="auction-timer">
+                  <i class="fas fa-clock"></i>
+                  <span>8h 45m left</span>
+                </div>
+              </div>
+              <div class="auction-footer">
+                <a href="auction-detail.html?id=2" class="bid-btn">Bid Now</a>
+                <button class="watchlist-btn">
+                  <i class="fas fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auction Card 3 -->
+          <div class="auction-card">
+            <div class="auction-image">
+              <img
+                src="images/ducati-panigale.jpg"
+                alt="2021 Ducati Panigale V4"
+              />
+              <span class="auction-badge">7 bids</span>
+            </div>
+            <div class="auction-content">
+              <h3 class="auction-title">2021 Ducati Panigale V4</h3>
+              <span class="auction-category">Sport</span>
+              <div class="auction-price">
+                <div>
+                  <p class="price-label">Current Bid</p>
+                  <p class="price-value">$18,499.99</p>
+                </div>
+                <div class="auction-timer">
+                  <i class="fas fa-clock"></i>
+                  <span>4d 12h left</span>
+                </div>
+              </div>
+              <div class="auction-footer">
+                <a href="auction-detail.html?id=3" class="bid-btn">Bid Now</a>
+                <button class="watchlist-btn">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auction Card 4 -->
+          <div class="auction-card">
+            <div class="auction-image">
+              <img
+                src="images/jeep-wrangler.jpg"
+                alt="2020 Jeep Wrangler Rubicon"
+              />
+              <span class="auction-badge">18 bids</span>
+            </div>
+            <div class="auction-content">
+              <h3 class="auction-title">2020 Jeep Wrangler Rubicon</h3>
+              <span class="auction-category">SUV</span>
+              <div class="auction-price">
+                <div>
+                  <p class="price-label">Current Bid</p>
+                  <p class="price-value">$42,799.99</p>
+                </div>
+                <div class="auction-timer">
+                  <i class="fas fa-clock"></i>
+                  <span>1d 3h left</span>
+                </div>
+              </div>
+              <div class="auction-footer">
+                <a href="auction-detail.html?id=4" class="bid-btn">Bid Now</a>
+                <button class="watchlist-btn">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section>
+        <div class="features">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <h3 class="feature-title">Sell Your Vehicle</h3>
+            <p class="feature-text">
+              List your vehicle and turn it into cash. Easy listing process and
+              secure transactions.
+            </p>
+            <a href="sell.html" class="btn btn-primary">Start Selling</a>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <h3 class="feature-title">Set Alerts</h3>
+            <p class="feature-text">
+              Never miss the vehicles you're looking for. Set alerts and get
+              notified when they're available.
+            </p>
+            <a href="alerts.html" class="btn btn-secondary">Create Alert</a>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <h3 class="feature-title">Automatic Bidding</h3>
+            <p class="feature-text">
+              Set your maximum bid and let our system automatically bid for you
+              to secure your desired vehicle.
+            </p>
+            <a href="help.html#automatic-bidding" class="btn btn-secondary"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Column 1 -->
+          <div class="footer-column">
+            <h3>BuyMe</h3>
+            <p>
+              Your trusted platform for buying and selling vehicles through
+              online auctions.
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="auctions.html">Browse Auctions</a></li>
+              <li><a href="sell.html">Sell a Vehicle</a></li>
+              <li><a href="alerts.html">Set Alerts</a></li>
+              <li><a href="help.html">Help Center</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li><a href="category.html?cat=cars">Cars</a></li>
+              <li><a href="category.html?cat=trucks">Trucks</a></li>
+              <li><a href="category.html?cat=motorcycles">Motorcycles</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li>Email: support@buyme.com</li>
+              <li>Phone: (123) 456-7890</li>
+              <li><a href="contact.html">Contact Form</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 BuyMe. All rights reserved.</p>
+          <div>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

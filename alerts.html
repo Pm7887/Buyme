@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Alerts - BuyMe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, sans-serif;
+      }
+      body {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #111827;
+      }
+      .logo span {
+        color: #4a6cf7;
+      }
+      nav a {
+        margin-left: 15px;
+        text-decoration: none;
+        color: #4b5563;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      .card {
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      .form-row {
+        margin-bottom: 15px;
+      }
+      .form-row label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-input,
+      .form-select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .btn {
+        background: #4a6cf7;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .alert-item {
+        border: 1px solid #eee;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .alert-delete {
+        background: #f87171;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      footer {
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+      }
+      @media (max-width: 600px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="logo">Buy<span>Me</span></a>
+      <nav>
+        <a href="auctions.html">Auctions</a>
+        <a href="sell.html">Sell</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <h1>Vehicle Alerts</h1>
+
+      <div class="card">
+        <h2>Create New Alert</h2>
+        <form id="alert-form">
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="vehicle-type">Vehicle Type</label>
+              <select id="vehicle-type" class="form-select">
+                <option value="">Any Type</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+                <option value="suv">SUV</option>
+                <option value="motorcycle">Motorcycle</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="make">Make</label>
+              <select id="make" class="form-select">
+                <option value="">Any Make</option>
+                <option value="ford">Ford</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="bmw">BMW</option>
+                <option value="tesla">Tesla</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="model">Model</label>
+              <input
+                type="text"
+                id="model"
+                class="form-input"
+                placeholder="Optional"
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="year-min">Year (Min)</label>
+              <input
+                type="number"
+                id="year-min"
+                class="form-input"
+                placeholder="Any"
+              />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="price-max">Max Price ($)</label>
+              <input
+                type="number"
+                id="price-max"
+                class="form-input"
+                placeholder="No limit"
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="mileage-max">Max Mileage</label>
+              <input
+                type="number"
+                id="mileage-max"
+                class="form-input"
+                placeholder="No limit"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="keywords">Keywords</label>
+            <input
+              type="text"
+              id="keywords"
+              class="form-input"
+              placeholder="Optional keywords"
+            />
+          </div>
+
+          <button type="submit" class="btn">Create Alert</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Your Alerts</h2>
+        <div id="alerts-list">
+          <div class="alert-item">
+            <div>
+              <strong>Ford F-150</strong>
+              <div>Truck, Year: 2018+, Max Price: $45,000</div>
+            </div>
+            <button class="alert-delete">Delete</button>
+          </div>
+
+          <div class="alert-item">
+            <div>
+              <strong>Tesla Model 3</strong>
+              <div>Car, Max Mileage: 30,000</div>
+            </div>
+            <button class="alert-delete">Delete</button>
+          </div>
+
+          <div class="alert-item">
+            <div>
+              <strong>Any Motorcycle</strong>
+              <div>Keywords: "sport", Max Price: $15,000</div>
+            </div>
+            <button class="alert-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>&copy; 2023 BuyMe. All rights reserved.</footer>
+
+    <script>
+      document
+        .getElementById("alert-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const type = document.getElementById("vehicle-type").value;
+          const make = document.getElementById("make").value;
+          const model = document.getElementById("model").value;
+          const yearMin = document.getElementById("year-min").value;
+          const priceMax = document.getElementById("price-max").value;
+          const mileageMax = document.getElementById("mileage-max").value;
+          const keywords = document.getElementById("keywords").value;
+
+          // Create new alert item
+          const alertsList = document.getElementById("alerts-list");
+          const alertItem = document.createElement("div");
+          alertItem.className = "alert-item";
+
+          // Create alert content
+          let title = make ? make.charAt(0).toUpperCase() + make.slice(1) : "";
+          if (model) title += " " + model;
+          if (!title)
+            title = type
+              ? type.charAt(0).toUpperCase() + type.slice(1)
+              : "Any Vehicle";
+
+          let details = [];
+          if (type && !title.includes(type))
+            details.push(type.charAt(0).toUpperCase() + type.slice(1));
+          if (yearMin) details.push(`Year: ${yearMin}+`);
+          if (priceMax) details.push(`Max Price: $${priceMax}`);
+          if (mileageMax) details.push(`Max Mileage: ${mileageMax}`);
+          if (keywords) details.push(`Keywords: "${keywords}"`);
+
+          alertItem.innerHTML = `
+        <div>
+          <strong>${title}</strong>
+          <div>${details.join(", ")}</div>
+        </div>
+        <button class="alert-delete">Delete</button>
+      `;
+
+          // Add to list
+          alertsList.prepend(alertItem);
+
+          // Reset form
+          this.reset();
+
+          // Add delete functionality to new button
+          alertItem
+            .querySelector(".alert-delete")
+            .addEventListener("click", function () {
+              alertItem.remove();
+            });
+        });
+
+      // Add delete functionality to existing buttons
+      document.querySelectorAll(".alert-delete").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.parentElement.remove();
+        });
+      });
+    </script>
+  </body>
+</html>

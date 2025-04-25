@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell Your Vehicle - BuyMe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, sans-serif;
+      }
+
+      body {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #111827;
+      }
+
+      .logo span {
+        color: #4a6cf7;
+      }
+
+      nav a {
+        margin-left: 15px;
+        text-decoration: none;
+        color: #4b5563;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .form-section {
+        margin-bottom: 20px;
+      }
+
+      .form-section h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .form-row {
+        margin-bottom: 15px;
+      }
+
+      .form-row label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .form-textarea {
+        min-height: 100px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .upload-area {
+        border: 2px dashed #ddd;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+
+      .submit-btn {
+        background: #4a6cf7;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      footer {
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+      }
+
+      @media (max-width: 600px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="logo">Buy<span>Me</span></a>
+      <nav>
+        <a href="auctions.html">Auctions</a>
+        <a href="sell.html">Sell</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <h1>Sell Your Vehicle</h1>
+
+      <form id="auction-form">
+        <!-- Vehicle Details -->
+        <div class="form-section">
+          <h2>Vehicle Details</h2>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="vehicle-type">Vehicle Type</label>
+              <select id="vehicle-type" class="form-select" required>
+                <option value="">Select Type</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+                <option value="suv">SUV</option>
+                <option value="motorcycle">Motorcycle</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="year">Year</label>
+              <input
+                type="number"
+                id="year"
+                class="form-input"
+                min="1900"
+                max="2023"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="make">Make</label>
+              <input type="text" id="make" class="form-input" required />
+            </div>
+
+            <div class="form-row">
+              <label for="model">Model</label>
+              <input type="text" id="model" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="mileage">Mileage</label>
+              <input
+                type="number"
+                id="mileage"
+                class="form-input"
+                min="0"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="condition">Condition</label>
+              <select id="condition" class="form-select" required>
+                <option value="">Select Condition</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="poor">Poor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="title">Listing Title</label>
+            <input
+              type="text"
+              id="title"
+              class="form-input"
+              placeholder="e.g. 2022 Ford F-150 Raptor"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              class="form-textarea"
+              placeholder="Describe your vehicle"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Photos -->
+        <div class="form-section">
+          <h2>Photos</h2>
+
+          <div
+            class="upload-area"
+            onclick="document.getElementById('photo-upload').click()"
+          >
+            Click to upload photos (at least 1 required)
+            <input
+              type="file"
+              id="photo-upload"
+              style="display: none"
+              multiple
+              accept="image/*"
+              required
+            />
+          </div>
+
+          <div
+            id="photo-preview"
+            style="display: flex; flex-wrap: wrap; gap: 10px"
+          ></div>
+        </div>
+
+        <!-- Auction Details -->
+        <div class="form-section">
+          <h2>Auction Details</h2>
+
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="starting-price">Starting Price ($)</label>
+              <input
+                type="number"
+                id="starting-price"
+                class="form-input"
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="duration">Duration</label>
+              <select id="duration" class="form-select" required>
+                <option value="3">3 days</option>
+                <option value="7" selected>7 days</option>
+                <option value="14">14 days</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="contact-location">Location</label>
+            <input
+              type="text"
+              id="contact-location"
+              class="form-input"
+              placeholder="City, State"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Terms and Submit -->
+        <div class="form-section">
+          <div class="form-row">
+            <input type="checkbox" id="terms" required />
+            <label for="terms" style="display: inline">
+              I agree to the Terms and Conditions
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">List My Vehicle</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>&copy; 2023 BuyMe. All rights reserved.</footer>
+
+    <!-- Simple JavaScript for photo preview -->
+    <script>
+      document
+        .getElementById("photo-upload")
+        .addEventListener("change", function (e) {
+          const photoPreview = document.getElementById("photo-preview");
+          photoPreview.innerHTML = "";
+
+          for (let i = 0; i < Math.min(this.files.length, 3); i++) {
+            const file = this.files[i];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              const img = document.createElement("img");
+              img.src = e.target.result;
+              img.style.width = "80px";
+              img.style.height = "80px";
+              img.style.objectFit = "cover";
+              photoPreview.appendChild(img);
+            };
+
+            reader.readAsDataURL(file);
+          }
+        });
+
+      document
+        .getElementById("auction-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Your vehicle listing has been submitted.");
+        });
+    </script>
+  </body>
+</html>

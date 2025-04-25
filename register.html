@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - BuyMe Vehicle Auction</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">Buy<span>Me</span></a>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search for vehicles..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="auctions.html">Auctions</a></li>
+            <li><a href="sell.html">Sell</a></li>
+            <li><a href="alerts.html">Alerts</a></li>
+          </ul>
+        </nav>
+
+        <div class="auth-buttons">
+          <a href="login.html" class="login-btn">Log in</a>
+          <a href="register.html" class="register-btn">Register</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <div class="form-container">
+        <h1 class="form-title">Create an account</h1>
+        <p class="form-subtitle">
+          Join BuyMe to start buying and selling vehicles
+        </p>
+
+        <!-- Registration Form -->
+        <form action="#" method="post">
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="form-input"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="form-group">
+            <label for="confirmPassword" class="form-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="form-input"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <!-- Terms Agreement -->
+          <div style="margin-bottom: 20px">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms" style="font-size: 14px; color: #4b5563">
+              I agree to the
+              <a href="terms.html" style="color: #4a6cf7">Terms of Service</a>
+              and
+              <a href="privacy.html" style="color: #4a6cf7">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="form-submit">Create account</button>
+        </form>
+
+        <div class="form-footer">
+          Already have an account? <a href="login.html">Sign in</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <!-- Column 1 -->
+          <div class="footer-column">
+            <h3>BuyMe</h3>
+            <p>
+              Your trusted platform for buying and selling vehicles through
+              online auctions.
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="auctions.html">Browse Auctions</a></li>
+              <li><a href="sell.html">Sell a Vehicle</a></li>
+              <li><a href="alerts.html">Set Alerts</a></li>
+              <li><a href="help.html">Help Center</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li><a href="category.html?cat=cars">Cars</a></li>
+              <li><a href="category.html?cat=trucks">Trucks</a></li>
+              <li><a href="category.html?cat=motorcycles">Motorcycles</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li>Email: support@buyme.com</li>
+              <li>Phone: (123) 456-7890</li>
+              <li><a href="contact.html">Contact Form</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 BuyMe. All rights reserved.</p>
+          <div>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
